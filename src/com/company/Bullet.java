@@ -14,9 +14,9 @@ public class Bullet implements Entity {
     }
 
     public void move () {
-        y = y-1;
-        if(y <= 1)
-            y = 0;
+        this.y = this.y-1;
+        if(this.y <= 1)
+            this.y = 0;
 
     }
     public char getChar(){

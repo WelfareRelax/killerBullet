@@ -55,13 +55,7 @@ public class GameState {
         return (enemyList.get(enemyList.size()-1).gameRun);
 
     }
-
-    public void updateState() throws InterruptedException {
-        for(int i = 0; i < bulletList.size(); i++ ) {
-            bulletList.get(i).move();
-
-        }
-
+    public void checkCollide() throws InterruptedException {
         for(int i = 0; i < enemyList.size(); i++) {
 
             for (int j = 0; j < bulletList.size(); j++) {
@@ -77,10 +71,31 @@ public class GameState {
             }
         }
 
+    }
+    public void updateState() throws InterruptedException {
+
+
+        checkCollide();
         for(int i = 0; i < enemyList.size(); i++ ) {
-            enemyList.get(i).move();
+            this.enemyList.get(i).move();
 
         }
+
+
+
+        checkCollide();
+
+
+
+
+        for(int i = 0; i < bulletList.size(); i++ ) {
+            this.bulletList.get(i).move();
+
+        }
+
+
+
+
 
     }
     public void updateScreen() {

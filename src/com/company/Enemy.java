@@ -12,9 +12,9 @@ public abstract class Enemy implements Entity {
 
 
 
-    public Enemy() {
+  public Enemy() {
 
-    }
+  }
 
     public void move() {
         y = y + speed;
@@ -55,9 +55,9 @@ class FastEnemy extends  Enemy {
         speed=0.1f;}
 
     public void move () {
-        y = y+speed;
+        this.y = this.y+this.speed;
         if (y > 30) {
-            gameRun = false;
+            this.gameRun = false;
         }
 
     }
